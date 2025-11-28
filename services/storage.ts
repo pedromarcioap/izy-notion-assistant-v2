@@ -1,4 +1,4 @@
-import { AppSettings, DEFAULT_SETTINGS } from '../types';
+import { AppSettings, DEFAULT_SETTINGS } from '../types.ts';
 
 const STORAGE_KEY = 'izy_notion_settings';
 const FAVORITES_KEY = 'izy_notion_favorites';

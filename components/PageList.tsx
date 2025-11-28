@@ -1,7 +1,7 @@
 import React from 'react';
-import { PageData, PageType } from '../types';
+import { PageData, PageType } from '../types.ts';
 import { FileText, Database, StickyNote, Clock, ExternalLink, Star } from 'lucide-react';
-import { isPageFavorite, toggleFavorite } from '../services/storage';
+import { isPageFavorite, toggleFavorite } from '../services/storage.ts';
 
 interface PageListProps {
   title: string;

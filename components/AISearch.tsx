@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Search, Sparkles, Loader2, ArrowRight, AlertCircle } from 'lucide-react';
-import { PageData, AppSettings } from '../types';
-import { PageList } from './PageList';
-import { askGeminiAboutData as apiAsk } from '../services/geminiService';
-import { fetchNotionSearch } from '../services/notionService';
-import { getSettings } from '../services/storage';
+import { PageData, AppSettings } from '../types.ts';
+import { PageList } from './PageList.tsx';
+import { askGeminiAboutData as apiAsk } from '../services/geminiService.ts';
+import { fetchNotionSearch } from '../services/notionService.ts';
+import { getSettings } from '../services/storage.ts';
 
 export const AISearch: React.FC = () => {
   const [query, setQuery] = useState('');

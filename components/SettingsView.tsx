@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Save, Check, ShieldAlert } from 'lucide-react';
-import { getSettings, saveSettings } from '../services/storage';
-import { AppSettings } from '../types';
+import { getSettings, saveSettings } from '../services/storage.ts';
+import { AppSettings } from '../types.ts';
 
 export const SettingsView: React.FC<{ onSave: () => void }> = ({ onSave }) => {
   const [settings, setSettings] = useState<AppSettings>(getSettings());

@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { TabView, PageData, DEFAULT_SETTINGS } from './types';
-import { QuickActions } from './components/QuickActions';
-import { PageList } from './components/PageList';
-import { AISearch } from './components/AISearch';
-import { SettingsView } from './components/SettingsView';
+import { TabView, PageData, DEFAULT_SETTINGS } from './types.ts';
+import { QuickActions } from './components/QuickActions.tsx';
+import { PageList } from './components/PageList.tsx';
+import { AISearch } from './components/AISearch.tsx';
+import { SettingsView } from './components/SettingsView.tsx';
 import { Home, Search, PenTool, Layout, Settings, Loader2, RefreshCcw } from 'lucide-react';
-import { getSettings, isPageFavorite } from './services/storage';
-import { fetchNotionSearch } from './services/notionService';
+import { getSettings, isPageFavorite } from './services/storage.ts';
+import { fetchNotionSearch } from './services/notionService.ts';
 
 const App: React.FC = () => {
   const [currentView, setCurrentView] = useState<TabView>(TabView.DASHBOARD);

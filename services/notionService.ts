@@ -1,4 +1,4 @@
-import { PageData, PageType, AppSettings } from '../types';
+import { PageData, PageType, AppSettings } from '../types.ts';
 
 // Declare chrome type for TypeScript environment
 declare const chrome: any;

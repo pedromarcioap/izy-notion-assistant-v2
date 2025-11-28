@@ -1,5 +1,5 @@
 import { GoogleGenAI } from "@google/genai";
-import { PageData } from "../types";
+import { PageData } from "../types.ts";
 
 const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
 

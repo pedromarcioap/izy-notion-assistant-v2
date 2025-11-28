@@ -26,8 +26,11 @@
   "sandbox": {
     "pages": [
       "index.html"
-    ],
-    "content_security_policy": "sandbox allow-scripts allow-forms allow-popups allow-modals; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://unpkg.com https://cdn.tailwindcss.com https://esm.sh; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://esm.sh https://api.notion.com https://corsproxy.io https://generativelanguage.googleapis.com;"
+    ]
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'",
+    "sandbox": "sandbox allow-scripts allow-forms allow-popups allow-modals; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://unpkg.com https://cdn.tailwindcss.com https://esm.sh; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://esm.sh https://api.notion.com https://corsproxy.io https://generativelanguage.googleapis.com;"
   },
   "icons": {
     "16": "assets/icons/icon16.png",
