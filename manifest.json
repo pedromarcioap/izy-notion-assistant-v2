@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "Izy Notion Assistant",
+  "version": "1.0.0",
+  "description": "Seu assistente inteligente para o Notion. Busque, resuma e organize seu espaço de trabalho com IA.",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://api.notion.com/*"
+  ],
+  "action": {
+    "default_popup": "index.html",
+    "default_title": "Abrir Izy Assistant"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["assets/*"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
