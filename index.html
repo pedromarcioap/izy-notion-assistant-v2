@@ -40,8 +40,8 @@
     "react-dom": "https://esm.sh/react-dom@18.2.0",
     "@google/genai": "https://esm.sh/@google/genai",
     "lucide-react": "https://esm.sh/lucide-react@0.263.1?external=react",
-    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
-    "react/": "https://aistudiocdn.com/react@^19.2.0/"
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/"
   }
 }
 </script>
@@ -49,7 +49,7 @@
   <body>
     <div id="root"></div>
     
-    <!-- Carrega o app como text/babel para compilação em tempo de execução -->
-    <script type="text/babel" data-type="module" src="./index.tsx" data-presets="typescript,react"></script>
+    <!-- Carrega o app unificado como text/babel -->
+    <script type="text/babel" data-type="module" src="./main.tsx" data-presets="typescript,react"></script>
   </body>
 </html>
