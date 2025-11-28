@@ -12,7 +12,7 @@
     "https://api.notion.com/*"
   ],
   "action": {
-    "default_popup": "index.html",
+    "default_popup": "popup.html",
     "default_title": "Abrir Izy Assistant",
     "default_icon": {
         "16": "assets/icons/icon16.png",
@@ -22,6 +22,9 @@
   },
   "background": {
     "service_worker": "background.js"
+  },
+  "sandbox": {
+    "pages": ["index.html"]
   },
   "icons": {
     "16": "assets/icons/icon16.png",
