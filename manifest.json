@@ -24,7 +24,8 @@
     "service_worker": "background.js"
   },
   "sandbox": {
-    "pages": ["index.html"]
+    "pages": ["index.html"],
+    "content_security_policy": "sandbox allow-scripts allow-forms allow-popups allow-modals; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://unpkg.com https://cdn.tailwindcss.com https://esm.sh;"
   },
   "icons": {
     "16": "assets/icons/icon16.png",
