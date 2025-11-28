@@ -11,8 +11,13 @@
         font-family: 'Inter', sans-serif;
         background-color: #0f172a; /* Slate 900 */
         color: #e2e8f0; /* Slate 200 */
+        margin: 0;
+        padding: 0;
+        width: 400px; /* Largura padrão para popup de extensão */
+        height: 600px;
+        overflow: hidden;
       }
-      /* Custom Scrollbar for Extension feel */
+      /* Custom Scrollbar */
       ::-webkit-scrollbar {
         width: 6px;
       }
@@ -48,5 +53,7 @@
 </head>
   <body>
     <div id="root"></div>
+    <!-- Entry point fundamental para carregar o React -->
+    <script type="module" src="./index.tsx"></script>
   </body>
 </html>

@@ -13,7 +13,8 @@ chrome.runtime.onMessage.addListener((request: any, sender: any, sendResponse: a
   }
 });
 
-async function handleNotionSearch(payload: { token: string; query: string }) {
+// Exporting the function makes this file a module, preventing global scope pollution and duplicates
+export async function handleNotionSearch(payload: { token: string; query: string }) {
   const { token, query } = payload;
   
   // Direct call to Notion API (Allowed because of host_permissions in manifest.json)

@@ -4,7 +4,7 @@ import { QuickActions } from './components/QuickActions';
 import { PageList } from './components/PageList';
 import { AISearch } from './components/AISearch';
 import { SettingsView } from './components/SettingsView';
-import { Home, Search, PenTool, Layout, Settings, Loader2 } from 'lucide-react';
+import { Home, Search, PenTool, Layout, Settings, Loader2, RefreshCcw } from 'lucide-react';
 import { getSettings, isPageFavorite } from './services/storage';
 import { fetchNotionSearch } from './services/notionService';
 
@@ -72,12 +72,10 @@ const App: React.FC = () => {
   );
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-slate-950 p-4 md:p-8">
-      {/* Simulation Container (Popup Size) */}
-      <div className="w-full max-w-[400px] h-[600px] bg-slate-900 rounded-3xl shadow-2xl border border-slate-800 flex flex-col overflow-hidden relative">
+    <div className="w-full h-full min-h-screen bg-slate-950 flex flex-col overflow-hidden relative">
         
         {/* Header */}
-        <header className="px-6 pt-6 pb-4 bg-gradient-to-b from-slate-900 to-slate-900/95 z-10">
+        <header className="px-6 pt-6 pb-4 bg-gradient-to-b from-slate-900 to-slate-900/95 z-10 shrink-0">
           <div className="flex justify-between items-center mb-4">
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-blue-600 to-purple-600 flex items-center justify-center text-white font-bold text-sm shadow-lg shadow-blue-900/20">
@@ -85,12 +83,23 @@ const App: React.FC = () => {
               </div>
               <h1 className="text-lg font-bold text-white tracking-tight">Notion Assistant</h1>
             </div>
-            <button 
-              onClick={() => setCurrentView(TabView.SETTINGS)}
-              className={`transition-colors ${currentView === TabView.SETTINGS ? 'text-blue-400' : 'text-slate-500 hover:text-slate-300'}`}
-            >
-              <Settings size={18} />
-            </button>
+            <div className="flex items-center gap-1">
+              {hasToken && (
+                <button 
+                  onClick={() => setRefreshTrigger(p => p + 1)}
+                  className="p-2 text-slate-500 hover:text-blue-400 transition-colors rounded-full hover:bg-slate-800"
+                  title="Atualizar dados"
+                >
+                  <RefreshCcw size={16} className={loading ? 'animate-spin' : ''} />
+                </button>
+              )}
+              <button 
+                onClick={() => setCurrentView(TabView.SETTINGS)}
+                className={`p-2 transition-colors rounded-full hover:bg-slate-800 ${currentView === TabView.SETTINGS ? 'text-blue-400' : 'text-slate-500 hover:text-slate-300'}`}
+              >
+                <Settings size={18} />
+              </button>
+            </div>
           </div>
         </header>
 
@@ -181,15 +190,14 @@ const App: React.FC = () => {
         </main>
 
         {/* Bottom Navigation */}
-        <nav className="border-t border-slate-800 bg-slate-900/95 backdrop-blur-sm grid grid-cols-3 px-2 pb-1">
+        <nav className="border-t border-slate-800 bg-slate-900/95 backdrop-blur-sm grid grid-cols-3 px-2 pb-1 shrink-0">
           <NavItem view={TabView.DASHBOARD} icon={<Layout size={20} />} label="Início" />
           <NavItem view={TabView.SEARCH} icon={<Search size={20} />} label="Buscar" />
           <NavItem view={TabView.NOTES} icon={<PenTool size={20} />} label="Notas" />
         </nav>
 
         {/* Decorative elements */}
-        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-amber-500 opacity-80"></div>
-      </div>
+        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-amber-500 opacity-80 z-20"></div>
     </div>
   );
 };
