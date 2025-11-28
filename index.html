@@ -21,6 +21,7 @@
         color: #e2e8f0; /* Slate 200 */
         margin: 0;
         padding: 0;
+        /* Scrollbar styles handled by Tailwind/CSS inside App */
       }
       /* Custom Scrollbar Global */
       ::-webkit-scrollbar { width: 6px; }
@@ -29,7 +30,7 @@
       ::-webkit-scrollbar-thumb:hover { background: #475569; }
     </style>
 
-    <!-- Import Map para resolver pacotes (Apenas React 18 para evitar conflitos) -->
+    <!-- Import Map para resolver pacotes -->
     <script type="importmap">
 {
   "imports": {
@@ -48,7 +49,7 @@
   <body>
     <div id="root"></div>
     
-    <!-- Carrega o app unificado como text/babel -->
-    <script type="text/babel" data-type="module" src="./main.tsx" data-presets="typescript,react"></script>
+    <!-- Carrega o app como text/babel para compilação em tempo de execução -->
+    <script type="text/babel" data-type="module" src="./index.tsx" data-presets="typescript,react"></script>
   </body>
 </html>
