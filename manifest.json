@@ -15,17 +15,19 @@
     "default_popup": "popup.html",
     "default_title": "Abrir Izy Assistant",
     "default_icon": {
-        "16": "assets/icons/icon16.png",
-        "48": "assets/icons/icon48.png",
-        "128": "assets/icons/icon128.png"
+      "16": "assets/icons/icon16.png",
+      "48": "assets/icons/icon48.png",
+      "128": "assets/icons/icon128.png"
     }
   },
   "background": {
     "service_worker": "background.js"
   },
   "sandbox": {
-    "pages": ["index.html"],
-    "content_security_policy": "sandbox allow-scripts allow-forms allow-popups allow-modals; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://unpkg.com https://cdn.tailwindcss.com https://esm.sh;"
+    "pages": [
+      "index.html"
+    ],
+    "content_security_policy": "sandbox allow-scripts allow-forms allow-popups allow-modals; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://unpkg.com https://cdn.tailwindcss.com https://esm.sh; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://esm.sh https://api.notion.com https://corsproxy.io https://generativelanguage.googleapis.com;"
   },
   "icons": {
     "16": "assets/icons/icon16.png",
@@ -34,8 +36,12 @@
   },
   "web_accessible_resources": [
     {
-      "resources": ["assets/*"],
-      "matches": ["<all_urls>"]
+      "resources": [
+        "assets/*"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
     }
   ]
 }
