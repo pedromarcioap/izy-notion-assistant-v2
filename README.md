@@ -1,52 +1,33 @@
-# Izy Notion Assistant 🤖
+# Izy Notion Assistant
 
-![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
-![React](https://img.shields.io/badge/React-18-61DAFB.svg)
-![Chrome Extension](https://img.shields.io/badge/Chrome-Extension-4285F4.svg)
+Extensão minimalista para Chrome para aumentar sua produtividade no Notion.
 
-**Izy** é uma extensão inteligente para Google Chrome que conecta você ao seu workspace do Notion. Busque páginas, filtre databases e converse com seus documentos usando Inteligência Artificial.
+## Funcionalidades
 
-## ✨ Funcionalidades
+*   **Autenticação Segura**: Armazena seu Token de Integração localmente.
+*   **Recentes**: Visualize as últimas 10 páginas editadas.
+*   **Busca**: Pesquise páginas e databases em tempo real.
+*   **Nota Rápida**: Envie notas de texto diretamente para sua página "Inbox".
+*   **Favoritos**: Fixe páginas importantes localmente na extensão.
 
-*   **⚡ Busca Instantânea**: Encontre qualquer página ou database em milissegundos.
-*   **🧠 Izy AI**: Pergunte ao assistente sobre seus dados (ex: "O que trabalhei na última semana?", "Resuma a ata da reunião").
-*   **⭐ Favoritos**: Fixe páginas importantes para acesso rápido.
-*   **📝 Quick Notes**: Área de rascunho rápido salva localmente.
-*   **🔒 Seguro**: Seus dados trafegam diretamente entre seu navegador e a API do Notion.
+## Instalação (Modo Desenvolvedor)
 
-## 🚀 Como Instalar (Developer Mode)
+1.  Clone ou baixe este repositório.
+2.  Abra `chrome://extensions/` no Chrome.
+3.  Ative o "Modo do desenvolvedor" (Developer mode).
+4.  Clique em "Carregar sem compactação" (Load Unpacked).
+5.  Selecione a pasta deste projeto.
 
-Como a extensão ainda não está na Chrome Web Store, você pode instalar manualmente:
+## Configuração
 
-1.  Clone este repositório:
-    ```bash
-    git clone https://github.com/seu-usuario/izy-notion-assistant.git
-    ```
-2.  Abra o Chrome e digite na barra de endereços: `chrome://extensions/`
-3.  No canto superior direito, ative o botão **Modo do desenvolvedor** (Developer mode).
-4.  Clique no botão **Carregar sem compactação** (Load Unpacked).
-5.  Selecione a pasta do projeto que você acabou de clonar.
+1.  Obtenha seu Token em [Notion Integrations](https://www.notion.so/my-integrations).
+2.  Crie uma nova integração e copie o "Internal Integration Secret".
+3.  Dê acesso à integração nas páginas desejadas do Notion (Menu ... > Add connections).
+4.  Abra a extensão, insira o Token.
+5.  (Opcional) Insira o ID da página "Inbox" para notas rápidas, ou deixe em branco para buscar automaticamente por uma página chamada "Inbox".
 
-## ⚙️ Configuração Inicial
+## Tecnologias
 
-1.  Clique no ícone da extensão Izy no seu navegador.
-2.  Vá para a aba **Configurações** (ícone de engrenagem).
-3.  Você precisará de um **Token de Integração do Notion**:
-    *   Acesse [notion.so/my-integrations](https://www.notion.so/my-integrations).
-    *   Clique em "New integration".
-    *   Dê um nome (ex: "Izy Assistant") e envie.
-    *   Copie o "Internal Integration Secret".
-4.  Cole o token no Izy e salve.
-5.  **Importante**: No Notion, vá até as páginas/databases que deseja que o Izy veja, clique nos `...` (menu) -> `Conexões` (Connections) -> Adicione a integração que você criou.
-
-## 🛠️ Tecnologias Usadas
-
-*   **Core**: React 18, TypeScript
-*   **Estilização**: Tailwind CSS
-*   **AI**: Google Gemini API via `@google/genai` SDK
-*   **API**: Notion Official API
-*   **Arquitetura**: Chrome Extension V3 (Sandboxed Iframe Architecture)
-
-## 📄 Licença
-
-Distribuído sob a licença MIT. Veja `LICENSE` para mais informações.
+*   HTML, CSS, JavaScript (Vanilla)
+*   Manifest V3
+*   Notion API v1

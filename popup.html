@@ -1,13 +1,83 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <style>
-        body, html { margin: 0; padding: 0; width: 400px; height: 600px; overflow: hidden; }
-        iframe { width: 100%; height: 100%; border: none; }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Izy Notion Assistant</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <iframe src="index.html" id="app-frame"></iframe>
+    <header>
+        <h1>
+            <span style="font-size: 18px;">⚡</span> Izy Assistant
+        </h1>
+        <button id="settings-btn" title="Configurações">⚙️</button>
+    </header>
+
+    <!-- Authentication & Settings View -->
+    <div id="auth-view" class="hidden">
+        <div class="input-group">
+            <label for="notion-token">Internal Integration Token</label>
+            <input type="password" id="notion-token" placeholder="secret_..." />
+        </div>
+
+        <div class="input-group">
+            <label for="inbox-page-id">Inbox Page ID (Quick Note)</label>
+            <input type="text" id="inbox-page-id" placeholder="Page ID for notes..." />
+            <small style="color: var(--text-secondary); font-size: 10px;">Leave empty to search for "Inbox"</small>
+        </div>
+
+        <div id="auth-error" class="error-msg"></div>
+
+        <button id="save-auth-btn" class="primary-btn">Salvar Configuração</button>
+    </div>
+
+    <!-- Main View -->
+    <div id="main-view">
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="recents">Recentes</button>
+            <button class="tab-btn" data-tab="search">Busca</button>
+            <button class="tab-btn" data-tab="favorites">Favoritos</button>
+            <button class="tab-btn" data-tab="note">Nota</button>
+        </div>
+
+        <!-- Recents Tab -->
+        <div id="tab-recents" class="view-container">
+            <div id="recents-list" class="list-container">
+                <!-- Items will be injected here -->
+            </div>
+            <div id="recents-loading" class="spinner hidden"></div>
+        </div>
+
+        <!-- Search Tab -->
+        <div id="tab-search" class="view-container hidden">
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Buscar páginas..." />
+            </div>
+            <div id="search-list" class="list-container">
+                <!-- Results -->
+            </div>
+            <div id="search-loading" class="spinner hidden"></div>
+        </div>
+
+        <!-- Favorites Tab -->
+        <div id="tab-favorites" class="view-container hidden">
+            <div id="favorites-list" class="list-container">
+                <!-- Favorites -->
+            </div>
+            <div id="favorites-empty" class="state-msg hidden">Nenhum favorito salvo.</div>
+        </div>
+
+        <!-- Quick Note Tab -->
+        <div id="tab-note" class="view-container hidden">
+            <div class="note-container">
+                <textarea id="note-input" placeholder="Escreva uma nota rápida..."></textarea>
+                <div id="note-status" class="state-msg hidden" style="padding: 5px; margin-bottom: 5px;"></div>
+                <button id="send-note-btn" class="primary-btn">Salvar no Inbox</button>
+            </div>
+        </div>
+    </div>
+
     <script src="popup.js"></script>
 </body>
 </html>
